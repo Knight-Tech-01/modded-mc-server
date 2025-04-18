@@ -27,3 +27,11 @@ Clone the repository (or copy files manually), then from the project directory:
 
 ```bash
 docker build -t modded-mc-server .
+```
+
+###  Run container
+Mount your local folder into the container to persist world saves, mods, configs, and logs:
+
+```bash
+docker run -it -p 25565:25565 -v "${PWD}:/server" modded-mc-server
+```

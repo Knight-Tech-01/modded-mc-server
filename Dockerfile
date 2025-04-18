@@ -10,6 +10,9 @@ COPY . .
 # Make your start script executable (important for Linux-based containers)
 RUN chmod +x ./startserver.sh
 
+# Automatically accept the EULA
+RUN echo "eula=true" > eula.txt
+
 # Optional: pre-install NeoForge during build
 RUN ./startserver.sh ATM10_INSTALL_ONLY=true || true
 
