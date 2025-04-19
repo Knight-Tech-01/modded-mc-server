@@ -7,22 +7,19 @@ WORKDIR /server
 # Copy all local files into the image
 COPY . .
 
-# Make your start script executable (important for Linux-based containers)
+# Make the start script executable
 RUN chmod +x ./startserver.sh
 
-# Automatically accept the EULA
+# Automatically accept the EULA during build
 RUN echo "eula=true" > eula.txt
 
-# Optional: pre-install NeoForge during build
-RUN ./startserver.sh ATM10_INSTALL_ONLY=true || true
-
-# Expose default Minecraft server port
+# Expose Minecraft server port
 EXPOSE 25565
 
-# Environment variables (optional)
+# Set environment variables
 ENV ATM10_JAVA=java \
     ATM10_RESTART=true \
     ATM10_INSTALL_ONLY=false
 
-# Run the server
+# Start the server when the container runs
 CMD ["./startserver.sh"]
