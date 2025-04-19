@@ -13,6 +13,9 @@ RUN chmod +x ./startserver.sh
 # Automatically accept the EULA during build
 RUN echo "eula=true" > eula.txt
 
+# Install NeoForge server
+RUN java -jar neoforge-21.1.143-installer.jar -installServer
+
 # Expose Minecraft server port
 EXPOSE 25565
 
