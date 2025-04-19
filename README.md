@@ -33,5 +33,5 @@ docker build -t modded-mc-server .
 Run docker container:
 
 ```bash
-docker run -it -p 25565:25565 modded-mc-server
+docker run -it --name modded-server -p 25565:25565 modded-mc-server
 ```
