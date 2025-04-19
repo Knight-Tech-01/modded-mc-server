@@ -30,8 +30,8 @@ docker build -t modded-mc-server .
 ```
 
 ###  Run container
-Mount your local folder into the container to persist world saves, mods, configs, and logs:
+Run docker container:
 
 ```bash
-docker run -it -p 25565:25565 -v "${PWD}:/server" modded-mc-server
+docker run -it -p 25565:25565 modded-mc-server
 ```
