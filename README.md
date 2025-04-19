@@ -34,4 +34,16 @@ Run docker container:
 
 ```bash
 docker run -it --name modded-server -p 25565:25565 modded-mc-server
+
+```
+
+
+To stop:
+```bash
+docker stop modded-server
+```
+
+To start it later:
+```bash
+docker start -ai modded-server
 ```
