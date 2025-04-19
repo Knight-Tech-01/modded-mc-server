@@ -37,7 +37,6 @@ docker compose up
 
 ```
 
-
 To stop:
 ```bash
 docker-compose stop
