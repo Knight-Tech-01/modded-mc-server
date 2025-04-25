@@ -4,6 +4,7 @@ This repository contains the full setup for a **modded Minecraft server** using 
 
 ## Features
 
+- Automatic hourly backups, located in mounted /backup directory
 - Built with **Java 21** (required by Minecraft 1.21 and NeoForge)
 - Uses **NeoForge installer** for mod support
 - Includes all mod/config files
