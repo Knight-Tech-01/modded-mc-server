@@ -26,12 +26,24 @@ This repository contains the full setup for a **modded Minecraft server** using 
 Clone the repository (or copy files manually), then from the project directory:
 
 ```bash
-docker build -t modded-mc-server .
+docker compose build
 ```
 
 ###  Run container
 Run docker container:
 
 ```bash
-docker run -it -p 25565:25565 modded-mc-server
+docker compose up
+
+```
+
+
+To stop:
+```bash
+docker-compose stop
+```
+
+To start it later:
+```bash
+docker-compose up
 ```

@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  modded-server:
+    build: .
+    image: modded-mc-server
+    container_name: modded-server-container  # Set a custom container name
+    ports:
+      - "25565:25565"
+    volumes:
+      - ./backups:/server/backups

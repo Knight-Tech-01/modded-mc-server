@@ -61,6 +61,9 @@ if [ ! "$JAVA_VERSION" -ge 21 ]; then
     exit 1
 fi
 
+# Start cron in background
+cron
+
 # Start server in loop unless ATM10_RESTART=false
 while true
 do
