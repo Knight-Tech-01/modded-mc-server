@@ -23,3 +23,8 @@ if [ $? -eq 0 ]; then
 else
     echo "Backup failed at $(date)" >> "$LOG_FILE"
 fi
+
+# Backup rotation: Keep only the 10 most recent backups
+echo "Running backup rotation..." >> "$LOG_FILE"
+ls -1t "$BACKUP_DIR"/world_backup_*.tar.gz | tail -n +11 | xargs -r rm -f >> "$LOG_FILE" 2>&1
+echo "Backup rotation completed at $(date)" >> "$LOG_FILE"

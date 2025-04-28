@@ -20,8 +20,8 @@ RUN echo "eula=true" > eula.txt
 # Install NeoForge server
 RUN java -jar neoforge-21.1.143-installer.jar -installServer
 
-# Add cron job for hourly backups
-RUN echo "0 * * * * root /server/backup.sh >> /server/backup_log.txt 2>&1" > /etc/cron.d/mc-backup && chmod 0644 /etc/cron.d/mc-backup && crontab /etc/cron.d/mc-backup
+# Add cron job for backups every 6 hours
+RUN echo "0 */6 * * * root /server/backup.sh >> /server/backup_log.txt 2>&1" > /etc/cron.d/mc-backup && chmod 0644 /etc/cron.d/mc-backup && crontab /etc/cron.d/mc-backup
 
 # Expose Minecraft server port
 EXPOSE 25565
