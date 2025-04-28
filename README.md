@@ -42,8 +42,3 @@ To stop:
 ```bash
 docker-compose stop
 ```
-
-To start it later:
-```bash
-docker-compose up
-```
